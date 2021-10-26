@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace BL.Restaurante
 {
-   public class AgOrdenesBL
+    public class AgOrdenesBL
     {
-       public BindingList<Orden> ListaOrdenes { get; set; }
+        public BindingList<Orden> ListaOrdenes { get; set; }
 
 
         public AgOrdenesBL()
@@ -49,14 +49,86 @@ namespace BL.Restaurante
         {
             return ListaOrdenes;
         }
-    }
 
-    public class Orden
-    {
-        public int id { get; set; }
-        public string descripcion { get; set; }
-        public double precio { get; set; }
-        public int existencia { get; set; }
-        public bool activo { get; set; }
+        public Resultado GuardarOrden(Orden orden)
+        {
+
+            var resultado = validar(orden);
+            if (resultado.Exitoso == false)
+
+            {
+                return resultado;
+            }
+
+            if (orden.id == 0)
+            {
+                orden.id = ListaOrdenes.Max(item => item.id) + 1;
+            }
+            resultado.Exitoso = true;
+            return resultado;
+        }
+
+        public void agregarOrden()
+        {
+            var nuevaOrden = new Orden();
+
+            ListaOrdenes.Add(nuevaOrden);
+        }
+
+        public bool eliminarOrden(int id)
+        {
+            foreach (var item in ListaOrdenes)
+            {
+                if (item.id == id)
+                {
+                    ListaOrdenes.Remove(item);
+                    return true;
+                }
+            }
+            return false;
+
+        }
+
+        private Resultado validar(Orden orden)
+        {
+            var resultado = new Resultado();
+            resultado.Exitoso = true;
+
+            if (string.IsNullOrEmpty(orden.descripcion) == true)
+            {
+                resultado.Mensaje = "Ingrese una descripcion";
+                resultado.Exitoso = false;
+            }
+
+            if (orden.existencia < 0)
+            {
+                resultado.Mensaje = "La existencia debe ser mayor que cero";
+                resultado.Exitoso = false;
+            }
+
+            if (orden.precio < 0)
+            {
+                resultado.Mensaje = "La existencia debe ser mayor que cero";
+                resultado.Exitoso = false;
+            }
+
+
+            return resultado;
+        }
+
+        public class Orden
+        {
+            public int id { get; set; }
+            public string descripcion { get; set; }
+            public double precio { get; set; }
+            public int existencia { get; set; }
+            public bool activo { get; set; }
+        }
+        public class Resultado
+        {
+            public bool Exitoso { get; set; }
+            public string Mensaje { get; set; }
+        }
     }
 }
+
