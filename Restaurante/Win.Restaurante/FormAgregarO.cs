@@ -89,7 +89,7 @@ namespace Win.Restaurante
             {
                 ordenBindingSource.ResetBindings(false);
                 habilitardeshabilitarbotones(true);
-
+            
             }
             else
             {

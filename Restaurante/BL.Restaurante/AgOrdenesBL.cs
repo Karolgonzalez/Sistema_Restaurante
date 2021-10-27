@@ -31,7 +31,7 @@ namespace BL.Restaurante
 
         public Resultado GuardarOrden(Orden orden)
         {
-
+        
             var resultado = Validar(orden);
                 if(resultado.Exitoso == false)
             {
