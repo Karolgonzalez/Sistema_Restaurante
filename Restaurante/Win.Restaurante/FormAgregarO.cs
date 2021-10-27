@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static BL.Restaurante.AgOrdenesBL;
 
 namespace Win.Restaurante
 {
@@ -82,7 +81,7 @@ namespace Win.Restaurante
         private void ordenBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             ordenBindingSource.EndEdit();
-            var orden = (AgOrdenesBL.Orden)ordenBindingSource.Current;
+            var orden = (Orden)ordenBindingSource.Current;
 
             var Resultado = _Ordenes.GuardarOrden(orden);
 
@@ -94,7 +93,7 @@ namespace Win.Restaurante
             }
             else
             {
-                MessageBox.Show(Resultado.Mensaje );
+                MessageBox.Show(Resultado.Mensaje);
             }
         }
 
@@ -122,17 +121,17 @@ namespace Win.Restaurante
         }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
-
-            {
+        {
+           
             if(idTextBox.Text != "")
             {
-                var resultado = MessageBox.Show("Desea eliminar este registro?", "Eliminar", MessageBoxButtons.YesNo);
-                if (resultado == DialogResult.Yes)
+                var Resultado = MessageBox.Show("Desea Eliminar?", "Eliminar", MessageBoxButtons.YesNo);
+                if (Resultado == DialogResult.Yes)
                 {
                     var id = Convert.ToInt32(idTextBox.Text);
                     Eliminar(id);
-
                 }
+
             }   
         }
 
@@ -155,6 +154,16 @@ namespace Win.Restaurante
         {
             habilitardeshabilitarbotones(true);
             Eliminar(0);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormAgregarO_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
