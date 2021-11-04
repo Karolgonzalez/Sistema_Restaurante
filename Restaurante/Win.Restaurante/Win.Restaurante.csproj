@@ -153,6 +153,7 @@
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BL.Restaurante.AgOrdenesBL.datasource" />
+    <None Include="Properties\DataSources\BL.Restaurante.CategoriasBL.datasource" />
     <None Include="Properties\DataSources\BL.Restaurante.Orden.datasource" />
     <None Include="Properties\DataSources\BL.Restaurante.SeguridadBL.datasource" />
     <None Include="Properties\Settings.settings">
