@@ -31,6 +31,7 @@ namespace Win.Restaurante
         {
             var FormAgregarP = new FormAgregarP();
             FormAgregarP.Show();
+          
         }
 
         private void MenuPrinc_Load(object sender, EventArgs e)
@@ -42,6 +43,7 @@ namespace Win.Restaurante
         {
             var FormLogin = new FormLogin();
             FormLogin.ShowDialog();
+            toolStripStatusLabel1.Text = "Usuario: " + Utilidades.NombreUsuario;
         }
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
@@ -106,6 +108,11 @@ namespace Win.Restaurante
         {
             var formreporteventas = new FormReporteVentas();
             formreporteventas.Show();
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

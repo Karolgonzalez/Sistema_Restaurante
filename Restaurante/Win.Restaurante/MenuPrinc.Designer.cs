@@ -35,17 +35,20 @@
             this.facturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteOrdenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.seguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
-            this.reporteFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.reporteVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -73,7 +76,7 @@
             // agregarToolStripMenuItem
             // 
             this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
-            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.agregarToolStripMenuItem.Text = "Crear Orden";
             this.agregarToolStripMenuItem.Click += new System.EventHandler(this.agregarToolStripMenuItem_Click);
             // 
@@ -88,7 +91,7 @@
             // facturaToolStripMenuItem
             // 
             this.facturaToolStripMenuItem.Name = "facturaToolStripMenuItem";
-            this.facturaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.facturaToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.facturaToolStripMenuItem.Text = "Factura";
             this.facturaToolStripMenuItem.Click += new System.EventHandler(this.facturaToolStripMenuItem_Click);
             // 
@@ -108,6 +111,20 @@
             this.reporteOrdenesToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.reporteOrdenesToolStripMenuItem.Text = "Reporte Ordenes";
             this.reporteOrdenesToolStripMenuItem.Click += new System.EventHandler(this.reporteOrdenesToolStripMenuItem_Click);
+            // 
+            // reporteFacturasToolStripMenuItem
+            // 
+            this.reporteFacturasToolStripMenuItem.Name = "reporteFacturasToolStripMenuItem";
+            this.reporteFacturasToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.reporteFacturasToolStripMenuItem.Text = "Reporte Facturas";
+            this.reporteFacturasToolStripMenuItem.Click += new System.EventHandler(this.reporteFacturasToolStripMenuItem_Click);
+            // 
+            // reporteVentasToolStripMenuItem
+            // 
+            this.reporteVentasToolStripMenuItem.Name = "reporteVentasToolStripMenuItem";
+            this.reporteVentasToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.reporteVentasToolStripMenuItem.Text = "Reporte Ventas";
+            this.reporteVentasToolStripMenuItem.Click += new System.EventHandler(this.reporteVentasToolStripMenuItem_Click);
             // 
             // ventasToolStripMenuItem
             // 
@@ -160,13 +177,6 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // reporteFacturasToolStripMenuItem
-            // 
-            this.reporteFacturasToolStripMenuItem.Name = "reporteFacturasToolStripMenuItem";
-            this.reporteFacturasToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.reporteFacturasToolStripMenuItem.Text = "Reporte Facturas";
-            this.reporteFacturasToolStripMenuItem.Click += new System.EventHandler(this.reporteFacturasToolStripMenuItem_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Win.Restaurante.Properties.Resources.fridays_hamburguesa_con_alitas;
@@ -178,18 +188,30 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // reporteVentasToolStripMenuItem
+            // statusStrip1
             // 
-            this.reporteVentasToolStripMenuItem.Name = "reporteVentasToolStripMenuItem";
-            this.reporteVentasToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.reporteVentasToolStripMenuItem.Text = "Reporte Ventas";
-            this.reporteVentasToolStripMenuItem.Click += new System.EventHandler(this.reporteVentasToolStripMenuItem_Click);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 445);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(791, 22);
+            this.statusStrip1.TabIndex = 6;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(50, 17);
+            this.toolStripStatusLabel1.Text = "Usuario:";
+            this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
             // MenuPrinc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(791, 467);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
@@ -202,6 +224,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,5 +249,7 @@
         private System.Windows.Forms.ToolStripMenuItem reporteOrdenesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteFacturasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteVentasToolStripMenuItem;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }

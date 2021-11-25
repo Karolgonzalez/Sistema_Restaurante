@@ -150,6 +150,7 @@
       <DependentUpon>ReporteVentas.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Utilidades.cs" />
     <EmbeddedResource Include="FormReporteFactura.resx">
       <DependentUpon>FormReporteFactura.cs</DependentUpon>
     </EmbeddedResource>

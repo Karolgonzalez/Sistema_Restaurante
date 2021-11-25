@@ -225,5 +225,22 @@ namespace Win.Restaurante
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
+            string Buscar = textBox2.Text;
+
+            if (Buscar != "")
+            {
+                ordenBindingSource.DataSource = _Ordenes.ObtenerOrdenes(Buscar);
+            }
+            else
+            {
+                ordenBindingSource.DataSource = _Ordenes.ObtenerOrdenes();
+            }
+
+            ordenBindingSource.ResetBindings(false);
+        }
     }
 }

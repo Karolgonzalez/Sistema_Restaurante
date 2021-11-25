@@ -8,23 +8,35 @@ namespace BL.Restaurante
 {
     public class SeguridadBL
     {
-        public bool login(string usuario, string contrasena)
+
+       Contexto  _Contexto;
+
+        public SeguridadBL()
         {
-            if (usuario == "admin1" && contrasena == "1234")
-            {
-                return true;
-            }
-            else
-            if (usuario == "admin2" && contrasena == "1234")
-            {
-                return true;
-            }
-            return false;
+            _Contexto = new Contexto();
         }
 
-        public object login(object usuario, object contrasena)
+        public usuario login(string usuario, string contrasena)
         {
-            throw new NotImplementedException();
+            var Usuario = _Contexto.Usuarios.ToList();
+
+            foreach (var UsuarioDB in Usuario)
+            {
+                if (usuario == UsuarioDB.Nombre && contrasena == UsuarioDB.Contrasena)
+                {
+                    return UsuarioDB;
+                }
+            }
+            return null;
         }
+
+        public class usuario
+        {
+            public int Id { get; set; }
+            public string Nombre { get; set; }
+            public string Contrasena { get; set; }
+        }
+
+       
     }
 }

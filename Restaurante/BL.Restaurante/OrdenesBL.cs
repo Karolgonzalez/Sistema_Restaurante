@@ -29,6 +29,14 @@ namespace BL.Restaurante
             return ListaOrdenes;
         }
 
+
+        public BindingList<Orden> ObtenerOrdenes(string Buscar)
+        {
+            var Resultado = _contexto.Ordenes.Where(r => r.descripcion.Contains(Buscar));
+            return new BindingList<Orden>(Resultado.ToList());
+        }
+
+
         public Resultado GuardarOrden(Orden orden)
         {
 

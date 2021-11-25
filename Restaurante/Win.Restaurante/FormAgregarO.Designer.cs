@@ -64,6 +64,8 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.listaCategoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoriaIDComboBox = new System.Windows.Forms.ComboBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             activoLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             existenciaLabel = new System.Windows.Forms.Label();
@@ -347,7 +349,7 @@
             // 
             this.fotoPictureBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.fotoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.ordenBindingSource, "foto", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.fotoPictureBox.Location = new System.Drawing.Point(455, 12);
+            this.fotoPictureBox.Location = new System.Drawing.Point(479, 64);
             this.fotoPictureBox.Name = "fotoPictureBox";
             this.fotoPictureBox.Size = new System.Drawing.Size(284, 191);
             this.fotoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -356,7 +358,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(504, 217);
+            this.button1.Location = new System.Drawing.Point(528, 269);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 15;
@@ -366,7 +368,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(622, 217);
+            this.button2.Location = new System.Drawing.Point(646, 269);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 16;
@@ -396,11 +398,30 @@
             this.categoriaIDComboBox.ValueMember = "ID";
             this.categoriaIDComboBox.SelectedIndexChanged += new System.EventHandler(this.categoriaIDComboBox_SelectedIndexChanged_1);
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(464, 5);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(124, 20);
+            this.textBox2.TabIndex = 18;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(603, 3);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 19;
+            this.button3.Text = "Buscar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // FormAgregarO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(790, 333);
+            this.ClientSize = new System.Drawing.Size(790, 372);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(categoriaIDLabel);
             this.Controls.Add(this.categoriaIDComboBox);
             this.Controls.Add(this.button2);
@@ -462,5 +483,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.BindingSource listaCategoriasBindingSource;
         private System.Windows.Forms.ComboBox categoriaIDComboBox;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button3;
     }
 }

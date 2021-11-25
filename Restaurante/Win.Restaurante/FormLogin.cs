@@ -33,25 +33,52 @@ namespace Win.Restaurante
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Login();
+        }
+
+        private void Login()
+        {
             string usuario;
             string contrasena;
-            
+
 
             usuario = textBox1.Text;
             contrasena = textBox2.Text;
-            
+
+            button1.Enabled = false;
+            button1.Text = "Verificando...";
+            Application.DoEvents();
 
             var resultado = _seguridad.login(usuario, contrasena);
 
-            if (resultado == true) 
+            if (resultado != null)
             {
+                Utilidades.NombreUsuario = resultado.Nombre;      
                 this.Close();
             }
             else
             {
                 MessageBox.Show("La contrasena o el usuario esta incorrecto");
             }
-            
+
+            button1.Enabled = true;
+            button1.Text = "Aceptar";
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(textBox1.Text != "" && e.KeyChar == (char)Keys.Enter)
+            {
+                textBox2.Focus();
+            }
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (textBox1.Text != "" && textBox2.Text != "" && e.KeyChar == (char)Keys.Enter)
+            {
+                Login();
+            }
         }
     }
 }
